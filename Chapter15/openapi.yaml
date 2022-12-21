@@ -1,0 +1,83 @@
+openapi: 3.0.1
+info:
+  title: Anscombe Server
+  description: 'Provides the four Anscombe Datasets'
+  version: 1.0.0
+servers:
+- url: http://localhost:8080/
+paths:
+  /anscombe/{series}:
+    get:
+      summary: Get a dataset
+      operationId: getData
+      parameters:
+      - name: series
+        in: path
+        description: Series ID
+        required: true
+        schema:
+          type: string
+      - name: form
+        in: query
+        description: Alternative to the Accept header
+        required: false
+        schema:
+          type: string
+          enum: ['csv', 'xml', 'html', 'json']
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dataset'
+                xml:
+                  name: Series
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dataset'
+        400:
+          description: Invalid dataset value
+          content: {}
+  /anscombe/:
+    get:
+      summary: Names of dataasets
+      operationId: getIDs
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Series'
+                xml:
+                  name: Series
+              example:
+                - I
+                - II
+                - III
+                - IV
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Series'
+components:
+  schemas:
+    Dataset:
+      type: object
+      properties:
+        x:
+          type: number
+        y:
+          type: number
+      xml:
+        name: Pair
+    Series:
+      type: string

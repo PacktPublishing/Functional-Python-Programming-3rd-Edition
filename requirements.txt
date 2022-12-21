@@ -1,0 +1,15 @@
+# Used by TOX, but not by conda to build an initial environment
+pillow==9.2.0
+beautifulsoup4==4.11.1
+pymonad==2.4.0
+toolz==0.12.0
+pyrsistent==0.18.1
+rich==12.5.1
+pyyaml==6.0
+types-PyYAML==6.0.11
+mypy_extensions==0.4.3
+black==22.6.0
+flask==2.1.3
+tox==3.25.1
+# Helpful to have this match tox.ini
+pytest==7.1.2
