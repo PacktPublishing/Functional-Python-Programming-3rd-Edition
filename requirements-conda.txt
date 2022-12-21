@@ -1,5 +1,5 @@
 # Used by conda to build an initial environment
-pillow==9.2.0
+pillow==9.3.0
 beautifulsoup4==4.11.1
 toolz==0.12.0
 pyrsistent==0.18.1
