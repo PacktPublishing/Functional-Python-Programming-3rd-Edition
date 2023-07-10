@@ -363,18 +363,18 @@ FloatFuncT: TypeAlias = Callable[..., Iterator[float]]
 FDT = TypeVar("FDT", bound=FloatFuncT)
 
 
-def normalized(mean: float, stdev: float) -> FDT:
+def normalized(mean: float, stdev: float) -> FloatFuncT:
     z_score: Callable[[float], float] = lambda x: (x - mean) / stdev
 
-    def concrete_decorator(function: FDT) -> FDT:
+    def concrete_decorator(function: FloatFuncT) -> FloatFuncT:
         @wraps(function)
         def wrapped(data_arg: Iterable[float]) -> Iterator[float]:
             z = map(z_score, data_arg)
             return function(z)
 
-        return cast(FDT, wrapped)
+        return cast(FloatFuncT, wrapped)
 
-    return cast(FDT, concrete_decorator)
+    return cast(FloatFuncT, concrete_decorator)
 
 
 REPL_normalized = """
