@@ -50,7 +50,7 @@ def test_facti() -> None:
     assert facti(1000) == factorial(1000)
     assert facti(2000) == factorial(2000)
     if sys.version_info.minor > 10:
-        sys.set_int_max_str_digits(6000)  # type: ignore [attr-defined]
+        sys.set_int_max_str_digits(6000)
     assert len(str(facti(2000))) == 5736
 
 
@@ -82,7 +82,7 @@ def test_facts() -> None:
     assert fasts(1000) == factorial(1000)
     assert fasts(2000) == factorial(2000)
     if sys.version_info.minor > 10:
-        sys.set_int_max_str_digits(6000)  # type: ignore [attr-defined]
+        sys.set_int_max_str_digits(6000)
     assert len(str(fasts(2000))) == 5736
 
 

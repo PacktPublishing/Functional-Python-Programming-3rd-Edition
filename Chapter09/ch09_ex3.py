@@ -154,7 +154,7 @@ def test_num_cvt() -> None:
 from typing import Iterable, Iterator
 
 
-def convert(row_iter: Iterator[list[str]]) -> Union[Iterable[str], Iterable[float]]:
+def convert(row_iter: Iterator[list[str]]) -> Union[Iterable[tuple[str, ...]], Iterable[tuple[float, ...]]]:
     """
     >>> s3890= ['', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '', 'Per capita consumption of mozzarella cheese (US)Pounds (USDA)', '9.3', '9.7', '9.7', '9.7', '9.9', '10.2', '10.5', '11', '10.6', '10.6', '', 'Civil engineering doctorates awarded (US)Degrees awarded (National Science Foundation)', '480', '501', '540', '552', '547', '622', '655', '701', '712', '708', '', 'Correlation: 0.958648']
     >>> list(convert(column_data(s3890)))

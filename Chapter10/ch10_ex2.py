@@ -58,18 +58,18 @@ class Card(tuple[str, int]):
     Suits = "\u2660", "\u2665", "\u2666", "\u2663"
     __slots__ = ()
 
-    def __new__(cls, rank: int, suit: str) -> "Card":
-        obj = super().__new__(
-            Card,
-            cast(
-                Iterable[Any],
-                [
-                    suit,
-                    rank,
-                ],
-            ),
-        )
-        return obj
+    def __new__(cls: type["Card"], rank: int, suit: str) -> "Card":
+        obj = super().__new__(  # type: ignore [type-var]
+                cls,
+                cast(
+                    Iterable[Any],
+                    [
+                        suit,
+                        rank,
+                    ],
+                ),
+            )
+        return cast(Card, obj)
 
     def __str__(self) -> str:
         return f"{self.rank:2d}{self.suit}"

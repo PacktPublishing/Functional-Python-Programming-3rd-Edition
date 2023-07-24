@@ -428,7 +428,7 @@ def test_mean_f() -> None:
     assert sum_x2(data_1) == approx(659.9762)
     assert mean_f(lambda x: True, data_1) == approx(7.5)
 
-    data_2: list[Any] = [None, None] + data_1[:5] + [None] + data_1[5:] + [None, None, None]  # type: ignore [operator]
+    data_2: list[Any] = [None, None] + data_1[:5] + [None] + data_1[5:] + [None, None, None]
     assert mean_f(lambda x: x is not None, data_2) == approx(7.5)
 
 

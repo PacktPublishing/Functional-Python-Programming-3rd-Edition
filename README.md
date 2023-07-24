@@ -29,7 +29,7 @@ We’ll presume some familiarity with functional programming. Since Python is no
 
 Some of the examples use exploratory data analysis (EDA) as a problem domain to show the value of functional programming. Some familiarity with basic probability and statistics will help with this. There are only a few examples that move into more serious data science.
 
-You’ll need to have Python 3.10 installed and running. 
+You’ll need to have Python 3.11 installed and running. 
 For more information on Python, visit http://www.python.org/. 
 
 There are two paths to installing the required packages:
@@ -47,7 +47,7 @@ After the **conda** tool is installed,
 the required packages can be installed using the following:
 
 ```bash
-conda create -n functional3 --channel=conda-forge  python=3.10 --file requirements-conda.txt
+conda create -n functional3 --channel=conda-forge  python=3.11 --file requirements-conda.txt
 conda activate functional3
 python -m pip install pymonad==2.4.0
 ```

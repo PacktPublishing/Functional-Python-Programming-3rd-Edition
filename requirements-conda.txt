@@ -1,17 +1,18 @@
 # Used by conda to build an initial environment
-pillow==9.3.0
-beautifulsoup4==4.11.1
+pillow==10.0.0
+beautifulsoup4==4.12.2
 toolz==0.12.0
-pyrsistent==0.18.1
-rich==12.5.1
+pyrsistent==0.19.3
+rich==13.4.2
 pyyaml==6.0
-types-PyYAML==6.0.11
-mypy_extensions==0.4.3
-black==22.6.0
-flask==2.1.3
-tox==3.25.1
+types-PyYAML==6.0.12
+mypy_extensions==1.0.0
+black==23.3.0
+flask==2.3.2
+tox==4.6.4
 # Helpful to have this match tox.ini
-pytest==7.1.2
+pytest==7.4.0
+mypy==1.4.1
 # The following are not available in --channel=conda-forge
 # Use python -m pip install pymonad==2.4.0
 # pymonad==2.4.0 
