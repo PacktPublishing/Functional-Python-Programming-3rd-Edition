@@ -1,5 +1,5 @@
 # Used by TOX, but not by conda to build an initial environment
-pillow==10.0.0
+pillow==10.0.1
 beautifulsoup4==4.12.2
 toolz==0.12.0
 pyrsistent==0.19.3
