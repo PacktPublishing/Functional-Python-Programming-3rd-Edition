@@ -5,6 +5,6 @@ If you find any mistakes in this title Functional-Python-Programming-3rd-Edition
 ## Chapter01, Page 13 (Tip Box) - Sentence correction
 
 - **Incorrect sentence** is:
-   * Both techniques of yielding the values of a recurssive generator function are will have similar results. 
+   * Both techniques of yielding the values of a recurssive generator function `are will` have similar results. 
 - **Correct code** is:
-   * Both techniques of yielding the values of a recurssive generator function will have similar results.
+   * Both techniques of yielding the values of a recurssive generator function `will` have similar results.
